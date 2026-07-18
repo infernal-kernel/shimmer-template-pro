@@ -3,79 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01001 | Exclusive Content</title>
+    <title>RAMSY XX | Exclusive Content</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: radial-gradient(circle at top left, #1a1a2e, #16213e, #0f3460);
+            background-color: #0a0a0c;
             color: white;
             overflow-x: hidden;
+            margin: 0;
         }
+
+        /* --- ANIMACIÓN DE FONDO --- */
+        .blob {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(100px);
+            opacity: 0.15;
+            pointer-events: none;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -80px) scale(1.1); }
+            66% { transform: translate(-30px, 40px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        /* --- ESTILOS GLASSMORPHISM --- */
         .glass {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            border-radius: 24px;
         }
+
         .blur-image {
-            filter: blur(25px);
-            transition: transform 0.5s ease;
+            filter: blur(30px);
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
+
         .image-container:hover .blur-image {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            filter: blur(20px); /* Se aclara ligeramente al pasar el mouse */
         }
+
+        .btn-glow {
+            transition: all 0.3s ease;
+        }
+
         .btn-glow:hover {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+            background: linear-gradient(to right, #2563eb, #9333ea);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center p-6">
 
+    <!-- Blobs de Fondo Animados -->
+    <div class="blob top-[-10%] left-[-10%]" style="background: radial-gradient(circle, #3b82f6 0%, transparent 70%);"></div>
+    <div class="blob bottom-[-10%] right-[-10%]" style="background: radial-gradient(circle, #9333ea 0%, transparent 70%); animation-delay: -10s;"></div>
+
     <!-- Header -->
-    <header class="w-full max-w-4xl flex justify-between items-center py-8">
-        <h1 class="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 uppercase">
+    <header class="w-full max-w-5xl flex justify-between items-center py-8">
+        <h1 class="text-2xl font-black tracking-[0.3em] text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 uppercase">
             RAMSY XX
         </h1>
-        <div class="glass px-4 py-2 text-xs font-bold uppercase tracking-widest">
-            +18 Only
+        <div class="glass px-4 py-2 text-[10px] font-bold uppercase tracking-widest border-blue-500/30">
+            🔞 Solo Adultos
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Main Content -->
     <main class="w-full max-w-5xl">
-        <div class="text-center mb-16">
-            <h2 class="text-5xl md:text-7xl font-bold mb-4">Contenido <span class="text-blue-400">Privado</span></h2>
-            <p class="text-gray-400 max-w-lg mx-auto italic">Explora mi lado más exclusivo. Imágenes en alta definición disponibles solo para suscriptores.</p>
+        
+        <!-- Hero Section -->
+        <section class="text-center mt-12 mb-20">
+            <h2 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter">
+                CONTENIDO <br> <span class="text-blue-500">PRIVADO</span>
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-lg italic leading-relaxed">
+                "Lo que pasa en mi muro, se queda en mi muro. Únete para ver mi lado más personal y sin filtros."
+            </p>
+        </section>
+
+        <!-- Stats Section (NUEVO) -->
+        <div class="grid grid-cols-3 gap-4 mb-20 max-w-3xl mx-auto text-center">
+            <div class="glass py-6">
+                <p class="text-3xl font-bold text-blue-400 leading-none">500+</p>
+                <p class="text-[10px] uppercase tracking-widest mt-2 text-gray-500">Fotos HD</p>
+            </div>
+            <div class="glass py-6 border-purple-500/20">
+                <p class="text-3xl font-bold text-purple-500 leading-none">100+</p>
+                <p class="text-[10px] uppercase tracking-widest mt-2 text-gray-500">Vídeos</p>
+            </div>
+            <div class="glass py-6">
+                <p class="text-3xl font-bold text-blue-400 leading-none">Daily</p>
+                <p class="text-[10px] uppercase tracking-widest mt-2 text-gray-500">Posts</p>
+            </div>
         </div>
 
-        <!-- Grid de Imágenes Difuminadas -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Grid de Imágenes -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             <!-- Card 1 -->
-            <div class="image-container relative overflow-hidden rounded-3xl glass aspect-[3/4]">
+            <div class="image-container relative overflow-hidden rounded-[2rem] glass aspect-[3/4]">
                 <img src="tu-imagen-1.jpg" class="blur-image w-full h-full object-cover" alt="Preview">
-                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
-                    <span class="text-sm font-bold tracking-widest mb-4">EXCLUSIVE PREVIEW</span>
-                    <a href="https://onlyfans.com/ramsyxx" target="_blank" class="glass px-6 py-2 btn-glow transition-all">Desbloquear</a>
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/50">
+                    <div class="bg-white/10 p-4 rounded-full mb-4 backdrop-blur-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <a href="https://onlyfans.com/ramsyxx" target="_blank" class="glass px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Ver Contenido</a>
                 </div>
             </div>
-            <!-- Repetir Cards... -->
+            <!-- Repetir Card 2 y 3 con el mismo estilo -->
+            <div class="image-container relative overflow-hidden rounded-[2rem] glass aspect-[3/4]">
+                <img src="tu-imagen-2.jpg" class="blur-image w-full h-full object-cover" alt="Preview">
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/50">
+                    <div class="bg-white/10 p-4 rounded-full mb-4 backdrop-blur-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <a href="https://onlyfans.com/ramsyxx" target="_blank" class="glass px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Desbloquear</a>
+                </div>
+            </div>
+            <div class="image-container relative overflow-hidden rounded-[2rem] glass aspect-[3/4]">
+                <img src="tu-imagen-3.jpg" class="blur-image w-full h-full object-cover" alt="Preview">
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/50">
+                    <div class="bg-white/10 p-4 rounded-full mb-4 backdrop-blur-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <a href="https://onlyfans.com/ramsyxx" target="_blank" class="glass px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Ver Galería</a>
+                </div>
+            </div>
         </div>
 
-        <!-- Botón Principal Call to Action -->
-        <div class="mt-20 text-center">
+        <!-- CTA Principal -->
+        <div class="text-center mb-32">
             <a href="https://onlyfans.com/ramsyxx" target="_blank" 
-               class="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-bold text-xl transition-transform hover:scale-105 active:scale-95 shadow-2xl">
-                SUSCRÍBETE EN ONLYFANS
+               class="btn-glow inline-block px-16 py-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-black text-2xl shadow-2xl uppercase tracking-tighter">
+                Suscríbete ahora
             </a>
-            <p class="mt-6 text-sm text-gray-500 tracking-tighter uppercase">Seguro • Privado • Verificado</p>
+            <div class="mt-8 flex gap-6 justify-center text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">
+                <span>Instagram</span> • <span>Twitter / X</span> • <span>Telegram</span>
+            </div>
         </div>
+
+        <!-- FAQ Section (NUEVO) -->
+        <section class="max-w-2xl mx-auto mb-32">
+            <h3 class="text-center text-xl font-bold mb-10 uppercase tracking-widest text-blue-400">Preguntas Frecuentes</h3>
+            <div class="space-y-4">
+                <details class="glass p-6 cursor-pointer group">
+                    <summary class="list-none font-bold flex justify-between items-center">
+                        ¿Qué contenido encontraré?
+                        <span class="text-blue-500 group-open:rotate-180 transition-transform">↓</span>
+                    </summary>
+                    <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        Publico sesiones exclusivas en HD, vídeos detrás de cámara y contenido que las redes sociales tradicionales censuran.
+                    </p>
+                </details>
+                <details class="glass p-6 cursor-pointer group">
+                    <summary class="list-none font-bold flex justify-between items-center">
+                        ¿Haces contenido personalizado?
+                        <span class="text-blue-500 group-open:rotate-180 transition-transform">↓</span>
+                    </summary>
+                    <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        Sí, acepto peticiones por mensaje directo dentro de OnlyFans. ¡Hablemos por allí!
+                    </p>
+                </details>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="mt-24 pb-8 text-gray-600 text-[10px] uppercase tracking-[0.3em]">
-        © 2027 RAMSYXX - Todos los derechos reservados
+    <!-- Footer -->
+    <footer class="w-full flex flex-col items-center pb-12">
+        <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-8"></div>
+        <p class="text-gray-600 text-[9px] uppercase tracking-[0.5em] mb-4">
+            Seguro • Privado • Verificado
+        </p>
+        <p class="text-gray-800 text-[10px] font-bold uppercase tracking-widest">
+            © 2027 RAMSYXX - ALL RIGHTS RESERVED
+        </p>
     </footer>
 
 </body>
