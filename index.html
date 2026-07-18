@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucentis | Exclusive Content</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, #1a1a2e, #16213e, #0f3460);
+            color: white;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+        .blur-image {
+            filter: blur(25px);
+            transition: transform 0.5s ease;
+        }
+        .image-container:hover .blur-image {
+            transform: scale(1.05);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-6">
+
+    <!-- Header -->
+    <header class="w-full max-w-4xl flex justify-between items-center py-8">
+        <h1 class="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 uppercase">
+            RAMSY XX
+        </h1>
+        <div class="glass px-4 py-2 text-xs font-bold uppercase tracking-widest">
+            +18 Only
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="w-full max-w-5xl">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-bold mb-4">Contenido <span class="text-blue-400">Privado</span></h2>
+            <p class="text-gray-400 max-w-lg mx-auto italic">Explora mi lado más exclusivo. Imágenes en alta definición disponibles solo para suscriptores.</p>
+        </div>
+
+        <!-- Grid de Imágenes Difuminadas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="image-container relative overflow-hidden rounded-3xl glass aspect-[3/4]">
+                <img src="tu-imagen-1.jpg" class="blur-image w-full h-full object-cover" alt="Preview">
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
+                    <span class="text-sm font-bold tracking-widest mb-4">EXCLUSIVE PREVIEW</span>
+                    <a href="https://onlyfans.com/ramsyxx" target="_blank" class="glass px-6 py-2 btn-glow transition-all">Desbloquear</a>
+                </div>
+            </div>
+            <!-- Repetir Cards... -->
+        </div>
+
+        <!-- Botón Principal Call to Action -->
+        <div class="mt-20 text-center">
+            <a href="https://onlyfans.com/ramsyxx" target="_blank" 
+               class="inline-block px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-bold text-xl transition-transform hover:scale-105 active:scale-95 shadow-2xl">
+                SUSCRÍBETE EN ONLYFANS
+            </a>
+            <p class="mt-6 text-sm text-gray-500 tracking-tighter uppercase">Seguro • Privado • Verificado</p>
+        </div>
+    </main>
+
+    <footer class="mt-24 pb-8 text-gray-600 text-[10px] uppercase tracking-[0.3em]">
+        © 2024 RAMSYXX - Todos los derechos reservados
+    </footer>
+
+</body>
+</html>
